@@ -31,15 +31,21 @@ hbs.registerHelper('screamIt', (text)=>{
 app.get('/', (req, res)=>{
   res.render('home.hbs', {
     pageTitle:'home',
-    welcomeMessage:'welcome to my web',
+    welcomeMessage:'Welcome to my web',
   })
 })
 
 app.get('/about', (req,res)=>{
   res.render('about.hbs', {
-    pageTitle:'about page',
+    pageTitle:'About Page',
   })
 })
+
+app.get('/projects', function(req, res) {
+  res.render('projects.hbs', {
+    pageTitle:'Projects'
+  })
+});
 
 app.get('/bad', (req,res)=>{
   res.send({
